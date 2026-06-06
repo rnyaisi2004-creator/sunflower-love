@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Sunflower</title>
+
+    <!-- 🌻 FUENTES -->
+
+    <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+    <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+    <!-- 🌻 CSS -->
+
+    <link
+    rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+
+<!-- 🌻 PASSWORD -->
+
+<section
+id="password-screen"
+class="screen active">
+
+    <div class="overlay"></div>
+
+    <div class="password-container">
+
+        <h1>
+            El secreto duerme<br>
+            en el décimo quinto<br>
+            suspiro de noviembre.
+        </h1>
+
+        <!-- 🌻 DOTS -->
+
+        <div class="pin-display">
+
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+
+        </div>
+
+        <!-- 🌻 KEYPAD -->
+
+        <div class="keypad">
+
+            <button onclick="pressKey('1')">1</button>
+            <button onclick="pressKey('2')">2</button>
+            <button onclick="pressKey('3')">3</button>
+
+            <button onclick="pressKey('4')">4</button>
+            <button onclick="pressKey('5')">5</button>
+            <button onclick="pressKey('6')">6</button>
+
+            <button onclick="pressKey('7')">7</button>
+            <button onclick="pressKey('8')">8</button>
+            <button onclick="pressKey('9')">9</button>
+
+            <button onclick="deleteKey()">⌫</button>
+
+            <button onclick="pressKey('0')">0</button>
+
+            <button onclick="submitPassword()">✓</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 🌸 TRANSICIÓN -->
+
+<section
+id="transition-screen"
+class="screen">
+</section>
+
+<!-- 💌 CARTA -->
+
+<section
+id="letter-screen"
+class="screen">
+
+    <div class="overlay"></div>
+
+    <div class="letter-container">
+
+        <img
+        id="letter"
+        class="letter-image"
+        src="letter-closed.png"
+        onclick="openLetter()">
+
+        <p>
+            Haz click para abrir la carta
+        </p>
+
+    </div>
+
+</section>
+
+<!-- 🌻 GALLERY -->
+
+<section
+id="gallery-screen"
+class="screen">
+
+    <!-- 🌻 COLLAGE 1 -->
+
+    <div class="collage-section">
+
+        <img
+        class="collage"
+        src="collage1.jpg">
+
+    </div>
+
+    <!-- 🌻 COLLAGE 2 -->
+
+    <div class="collage-section">
+
+        <img
+        class="collage"
+        src="collage2.jpg">
+
+        <!-- 🌻 MUSIC CARD -->
+
+        <div
+        class="music-card"
+        onclick="toggleMusic()">
+
+            <img
+            class="music-cover"
+            src="cover.jpg">
+
+            <div class="music-info">
+
+                <h3>
+                    The night we...
+                </h3>
+
+                <p>
+                    Contigo, el camino se siente como hogar
+                </p>
+
+            </div>
+
+            <div class="music-icon">
+                ▶
+            </div>
+
+        </div>
+
+        <!-- 🌻 AUDIO -->
+
+        <audio
+        id="music"
+        loop>
+
+            <source
+            src="music.mp3"
+            type="audio/mpeg">
+
+        </audio>
+
+    </div>
+
+    <!-- 🌻 COLLAGE 3 -->
+
+    <div class="collage-section">
+
+        <img
+        class="collage"
+        src="collage3.jpg">
+
+    </div>
+
+</section>
+
+<!-- 🌻 GSAP -->
+
+<script
+src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js">
+</script>
+
+<!-- 🌻 JS -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
