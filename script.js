@@ -27,10 +27,10 @@ window.innerWidth < 768;
 /* 🌸 CONFIG */
 
 const FLOWER_COUNT =
-isMobile ? 85 : 170;
+isMobile ? 100 : 170;
 
 const CELL_SIZE =
-isMobile ? 150 : 190;
+isMobile ? 120 : 190;
 
 /* 🌻 ESCRIBIR */
 
@@ -128,7 +128,7 @@ function createFlowers(){
 
         const size =
         isMobile
-        ? gsap.utils.random(170,240)
+        ? gsap.utils.random(220,300)
         : gsap.utils.random(300,420);
 
         flower.style.width =
