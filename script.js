@@ -19,6 +19,19 @@ document.getElementById("letter-screen");
 const galleryScreen =
 document.getElementById("gallery-screen");
 
+/* 🌸 MOBILE */
+
+const isMobile =
+window.innerWidth < 768;
+
+/* 🌸 CONFIG */
+
+const FLOWER_COUNT =
+isMobile ? 85 : 170;
+
+const CELL_SIZE =
+isMobile ? 150 : 190;
+
 /* 🌻 ESCRIBIR */
 
 function pressKey(number){
@@ -90,12 +103,6 @@ function submitPassword(){
     }
 }
 
-/* 🌸 CONFIG */
-
-const FLOWER_COUNT = 170;
-
-const CELL_SIZE = 190;
-
 /* 🌸 CREAR FLORES */
 
 function createFlowers(){
@@ -117,8 +124,12 @@ function createFlowers(){
 
         flower.classList.add("flying-flower");
 
+        /* 🌻 tamaños */
+
         const size =
-        gsap.utils.random(300,420);
+        isMobile
+        ? gsap.utils.random(170,240)
+        : gsap.utils.random(300,420);
 
         flower.style.width =
         `${size}px`;
@@ -128,6 +139,8 @@ function createFlowers(){
 
         let startX;
         let startY;
+
+        /* 🌻 lados */
 
         if(side === 0){
 
@@ -200,7 +213,7 @@ function generateFlowerGrid(){
     return points;
 }
 
-/* 🌸 TRANSICIÓN */
+/* 🌸 PRIMERA TRANSICIÓN */
 
 function startFlowerTransition(){
 
