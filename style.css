@@ -474,3 +474,53 @@ body{
 
     border-radius:20px;
 }
+
+/* 🌻 MOBILE */
+
+@media(max-width:768px){
+
+    .music-card{
+
+        width:240px;
+
+        padding:10px;
+
+        bottom:90px;
+    }
+
+    .music-cover{
+
+        width:52px;
+        height:52px;
+    }
+
+    .music-info h3{
+
+        font-size:14px;
+    }
+
+    .music-info p{
+
+        font-size:11px;
+    }
+
+    .music-icon{
+
+        font-size:16px;
+    }
+
+    .letter-image{
+
+        width:210px;
+    }
+
+    .password-container{
+
+        padding:40px 25px;
+    }
+
+    .password-container h1{
+
+        font-size:28px;
+    }
+}
