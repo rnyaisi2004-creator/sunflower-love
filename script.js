@@ -299,32 +299,84 @@ function openLetter(){
         ease:"power2.out"
     });
 
-    /* 🌻 pausa */
+    /* 🌸 FLORES OTRA VEZ */
 
     setTimeout(()=>{
 
-        letterScreen.style.display =
-        "none";
+        transitionScreen.style.display =
+        "block";
 
-        galleryScreen.style.display =
-        "flex";
+        const flowers =
+        createFlowers();
 
-        /* 🌻 fade collage */
+        const destinations =
+        generateFlowerGrid();
 
-        gsap.fromTo(
-            "#gallery-screen",
+        flowers.forEach((flower,index)=>{
 
-            {
-                opacity:0
-            },
+            const target =
+            destinations[index % destinations.length];
 
-            {
-                opacity:1,
-                duration:1.5
-            }
-        );
+            gsap.to(flower,{
 
-    },1200);
+                x:target.x,
+
+                y:target.y,
+
+                rotation:
+                `+=${gsap.utils.random(-360,360)}`,
+
+                duration:
+                gsap.utils.random(3.2,4.8),
+
+                ease:"power3.inOut",
+
+                stagger:0.002
+            });
+        });
+
+        /* 🌸 mural completo */
+
+        setTimeout(()=>{
+
+            letterScreen.style.display =
+            "none";
+
+            galleryScreen.style.display =
+            "flex";
+
+            /* 🌸 reveal collage */
+
+            setTimeout(()=>{
+
+                gsap.to(".flying-flower",{
+
+                    y:
+                    window.innerHeight + 500,
+
+                    rotation:
+                    `+=${gsap.utils.random(-120,120)}`,
+
+                    duration:3.5,
+
+                    stagger:0.003,
+
+                    ease:"power3.in"
+
+                });
+
+                setTimeout(()=>{
+
+                    transitionScreen.style.display =
+                    "none";
+
+                },3500);
+
+            },500);
+
+        },5200);
+
+    },900);
 }
 
 /* 🌻 MÚSICA */
